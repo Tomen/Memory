@@ -1,0 +1,59 @@
+<polymer-element name="memory-card" attributes="count">
+  <template>
+    <style>
+        /* entire container, keeps perspective */
+      .flip-container {
+        -webkit-perspective: 1000;
+      }
+
+/* flip the pane when hovered */
+.flipped {
+  -webkit-transform: rotateY(180deg);
+}
+
+.flip-container,.front,.back {
+  width: 200px;
+  height: 200px;
+}
+
+/* flip speed goes here */
+.card {
+  -webkit-transition: 0.6s;
+  -webkit-transform-style: preserve-3d;
+  position: relative;
+}
+
+/* hide back of pane during swap */
+.front,.back {
+  -webkit-backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+  z-index: 2;
+  background: red;
+}
+
+/* back, initially hidden pane */
+.back {
+  -webkit-transform: rotateY(180deg);
+  background: blue;
+}
+    </style>
+        <div class="flip-container">
+      <div class="card" on-click="{{flipCard}}">
+        <div class="front">
+          {{front_html}}
+        </div>
+        <div class="back">
+          {{back_html}}
+        </div>
+      </div>
+    </div>
+  </template>
+  <script type="application/dart" src="memory_card.dart"></script>
+</polymer-element>
+

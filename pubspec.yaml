@@ -1,7 +1,0 @@
-name: Memory
-description: A sample Polymer application
-dependencies:
-    polymer: any
-transformers:
-- polymer:
-    entry_points: web/memory.html

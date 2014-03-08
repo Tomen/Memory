@@ -1,4 +1,18 @@
-<polymer-element name="memory-card" attributes="count">
+<!DOCTYPE html><html><head><script src="packages/shadow_dom/shadow_dom.debug.js"></script>
+<script src="packages/custom_element/custom-elements.debug.js"></script>
+<script src="packages/browser/interop.js"></script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sample app</title>
+    <link rel="stylesheet" href="memory.css">
+    
+    <!-- import the click-counter -->
+    
+    <script src="memory.html_bootstrap.dart.js"></script>
+    
+  </head>
+  <body><polymer-element name="memory-card" attributes="count">
   <template>
     <style>
         /* entire container, keeps perspective */
@@ -54,6 +68,18 @@
       </div>
     </div>
   </template>
-  <script type="application/dart" src="memory_card.dart"></script>
+  
 </polymer-element>
 
+
+    <h1>Memory</h1>
+    
+    <p>Hello world from Dart!</p>
+    
+    <div id="sample_container_id">
+      <memory-card front_html="Hallo Tommi" back_html="Hallo Martin"></memory-card>
+    </div>
+
+  
+
+</body></html>

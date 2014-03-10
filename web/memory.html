@@ -9,7 +9,7 @@
     
     <!-- import the click-counter -->
     <link rel="import" href="memory_card.html">
-    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script type="application/dart" src="memory.dart"></script>
     <script src="packages/browser/dart.js"></script>
   </head>
   <body>
@@ -17,9 +17,7 @@
     
     <p>Hello world from Dart!</p>
     
-    <div id="sample_container_id">
-      <memory-card front_html="Hallo Tommi" back_html="Hallo Martin"></memory-card>
-    </div>
+    <div id="container" style="position: relative;"></div>
 
   </body>
 </html>

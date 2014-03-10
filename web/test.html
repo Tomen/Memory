@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>index</title>
+    <script type="application/dart">export 'package:polymer/init.dart';</script>
+    <script src="packages/browser/dart.js"></script>
+</head>
+
+<body>
+
+    <polymer-element name="my-element" noscript>
+        <template>
+            <!-- BUG: https://code.google.com/p/dart/issues/detail?id=14382 -->
+            <!--  link rel="stylesheet" href="styles.css" -->
+            <style>
+            @host {
+              :scope {
+                display: block;
+              }
+              
+              :scope:hover {
+                border: 1px solid black;
+              }
+            }
+            
+            p {
+                color: red;
+            }
+            
+            #message {
+                color: pink;
+            }
+            
+            .important {
+                color: green;
+            }
+            
+            #controls p {
+              color: orange;
+            }
+            </style>
+            <p>Inside element, should be red</p>
+
+            <div id="message">
+                The message should be pink
+            </div>
+
+            <div class="important">
+                Important is green
+            </div>
+            
+            <div>
+              <content></content>
+            </div>
+            
+            <my-child>
+              <div id="controls">
+                <p>Content from my-element, giving to child</p>
+              </div>
+            </my-child>
+        </template>
+    </polymer-element>
+    
+    <polymer-element name="my-child" noscript>
+      <template>
+        <div id="content">
+          <p>Here in child</p>
+          <content></content>
+        </div>
+      </template>
+    </polymer-element>
+
+    <p>outside of element, should be black</p>
+
+    <div id="message">
+        The outside message should be black
+    </div>
+
+    <div class="important">
+        Outside important is black
+    </div>
+
+    <my-element>Hello from content</my-element>
+
+</body>
+</html>
